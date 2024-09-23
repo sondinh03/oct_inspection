@@ -1,0 +1,36 @@
+server:
+  port: 8080
+  servlet.context-path: /api
+
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: "jdbc:postgresql://localhost:5432/oct_l3"
+    username: "postgres"
+    password: "son06032003"
+
+  jpa:
+    database: POSTGRESQL
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    generate-ddl: false
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+logging:
+  level:
+    root: INFO
+  file:
+    name: "logs/info.log"
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%"
+  logback:
+    rollingpolicy:
+      max-file-size: 2MB
+      total-size-cap: 10MB
+      max-history: 30
+      clean-history-on-start: false
+jwt:
+  signerKey: NqcSTuk7Ntu7B6JqXOlS5HSdztAexUR2unxEr3MaR3qURtnYXRP2exBJYmR1KlKY
+  valid-duration: 3600
+  refreshable-duration: 36000
